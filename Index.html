@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Join Our WhatsApp Community</title>
+  <meta name="description" content="Join our active WhatsApp community — share, discuss and connect." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f172a;--card:#0b1220;--accent:#7c3aed;--muted:#94a3b8;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071029 0%, #081025 50%, #041022 100%);} 
+    .container{max-width:980px;margin:48px auto;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.03)}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0ea5a6);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:white}
+    h1{margin:0;font-size:24px}
+    p.lead{color:var(--muted);margin:8px 0 20px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+    .about{line-height:1.6;color:#d8e6f8}
+    .rules{margin-top:12px;padding:12px;background:var(--glass);border-radius:8px;color:var(--muted)}
+    .joinCard{background:linear-gradient(180deg,#071430, #071227);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .bigBtn{display:inline-block;padding:14px 18px;border-radius:10px;font-weight:700;text-decoration:none;background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;box-shadow:0 6px 18px rgba(124,58,237,0.2);}
+    .small{display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:13px;text-decoration:none}
+    .meta{margin-top:12px;color:var(--muted);font-size:14px}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    .actions{display:flex;gap:10px;align-items:center;margin-top:14px}
+    .copy{cursor:pointer}
+    @media(max-width:860px){.grid{grid-template-columns:1fr;}.container{margin:18px;padding:18px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="logo">GC</div>
+        <div>
+          <h1>WhatsApp Community - Anime & Tech</h1>
+          <p class="lead">Join a focused group for anime discussion, bot-help, and community events. Respectful members, zero spam.</p>
+        </div>
+      </header><div class="grid" style="margin-top:20px">
+    <div>
+      <section class="about">
+        <h3>What we do</h3>
+        <p>Daily anime talks, prompt swaps, bot & server help, quizzes, and collabs. New members are welcomed — read the rules and introduce yourself after joining.</p>
+
+        <div class="rules">
+          <strong>Rules (short):</strong>
+          <ul style="margin:8px 0 0 18px">
+            <li>No spam or scams.</li>
+            <li>Respect every member.</li>
+            <li>No hate speech or politics.</li>
+            <li>Share resources & help each other.</li>
+          </ul>
+        </div>
+
+        <h3 style="margin-top:16px">How to join</h3>
+        <p>Click the "Join the Community" button on the right. If the invite expires, use the copy-invite button to save the link and try again later.</p>
+
+      </section>
+    </div>
+
+    <aside>
+      <div class="joinCard">
+        <h3 style="margin:0 0 6px 0">Ready to join?</h3>
+        <p class="meta">Active members: <strong>Open</strong> · Language: <strong>Hinglish / English</strong></p>
+
+        <!-- Join button -->
+        <div style="margin-top:14px">
+          <a class="bigBtn" href="https://chat.whatsapp.com/D3u9QP0UlgLAOujeX9qFdl?mode=wwt" target="_blank" rel="noopener noreferrer" id="joinBtn">Join the Community</a>
+        </div>
+
+        <div class="actions">
+          <button class="small copy" id="copyBtn" title="Copy invite link">Copy invite link</button>
+          <a class="small" href="mailto:admin@example.com?subject=Community%20Inquiry">Contact admin</a>
+        </div>
+
+        <p class="meta" style="margin-top:10px">Invite link:</p>
+        <div style="word-break:break-all;background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;margin-top:6px;font-size:13px;color:var(--muted)" id="linkBox">https://chat.whatsapp.com/D3u9QP0UlgLAOujeX9qFdl?mode=wwt</div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div>Made for the community — bring respect, bring memes, bring energy.</div>
+  </footer>
+</div>
+
+  </div>  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const link = 'https://chat.whatsapp.com/D3u9QP0UlgLAOujeX9qFdl?mode=wwt';
+    copyBtn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(link);
+        copyBtn.textContent = 'Copied ✓';
+        setTimeout(()=> copyBtn.textContent = 'Copy invite link', 2200);
+      }catch(e){
+        const ta = document.createElement('textarea'); ta.value = link; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+        copyBtn.textContent = 'Copied ✓'; setTimeout(()=> copyBtn.textContent = 'Copy invite link', 2200);
+      }
+    });
+
+    // Small analytics stub (no external calls)
+    (function(){
+      console.log('Landing loaded for WhatsApp invite');
+    })();
+  </script></body>
+</html>
